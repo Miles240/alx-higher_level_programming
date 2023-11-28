@@ -1,2 +1,2 @@
 #!/bin/bash	
-python3 $PYCOD2E
+python3 "$PYCOD2E"
