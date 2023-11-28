@@ -1,3 +1,4 @@
- #!/usr/bin/python3
- str = "Holberton School"
- print(str * 3)
+#!/usr/bin/python3
+str = "Holberton School"
+result = str * 3
+print(result)
