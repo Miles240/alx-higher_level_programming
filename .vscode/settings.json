@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "0x00-python-hello_world"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
