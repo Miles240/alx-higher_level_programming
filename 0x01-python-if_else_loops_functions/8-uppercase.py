@@ -7,7 +7,6 @@ def uppercase(str):
         if "a" <= char <= "z":
             uppercase_char = chr(ord(char) - ord("a") + ord("A"))
             result += uppercase_char
-            print("{}".format(result))
         else:
             result += char
-            print("{}".format(result))
+    print("{}".format(result))
