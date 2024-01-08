@@ -6,7 +6,7 @@ def matrix_divided(matrix, div):
     """divides matrix by scalar integer, rounded to two decimal places"""
     import decimal
 
-    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
+    error_msg = "matrix must be a matrix (list of lists) of integers/floaclts"
     if type(matrix) is not list:
         raise TypeError(error_msg)
     len_rows = []
