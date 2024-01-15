@@ -1,1 +1,1 @@
-fuck yal 
+fuck 
