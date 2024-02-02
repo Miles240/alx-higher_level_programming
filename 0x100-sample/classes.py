@@ -1,59 +1,24 @@
-class Rectangle:
-    """Creating a Triangle
-    """
-    def __init__(self, width=0, height=0):
-        """Intializing the triangle"""
-        self.width = width
-        self.height  = height
+class Employee:
+    num_of_emp = 0
+    raise_amt = 1.04
 
-    def __del__(self):
-        print("Bye rectangle...")
+    def __init__(self, first, last, pay):
+        self.f_name = first
+        self.l_name = last
+        self.email = f"{first}{last}.@email.com"
+        self.pay = pay
+        Employee.num_of_emp += 1
 
-    @property
-    def width(self):
-        """Getter for private attribute width"""
-        return self.__width
-    
-    @width.setter
-    def width(self, value):
-        """Setter for private attribute width"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+    def fullname(self):
+        return f"{self.f_name} {self.l_name}"
 
-    @property
-    def height(self):
-        """getter for private attribute height"""
-        return self.__height
-    
-    @height.setter
-    def height(self, value):
-        """setter for private attribute heigth"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+    def apply_raise(self):
+        return self.pay * Employee.raise_amt
 
-    def area(self):
-        """Area of a rectangle"""
-        return (self.__width * self.__height)
-    
-    def perimeter(self):
-        """Perimeter of a rectangle"""
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return (self.__width *2) + (self.__height * 2)
-    
-    def __str__(self):
-        string = ""
-        string += '\n'.join('#' * self.__width for i in range(self.__height))
-        return string
-    
-    def __repr__(self) :
-        return f"Rectangle ({self.__width}, {self.__height})"
-    
+
+emp_1 = Employee("john", "Doe", 50000)
+emp_1.raise_amt = 1.2
+
+print(Employee.raise_amt)
+print(emp_1.raise_amt)
+print(int(emp_1.apply_raise()))
