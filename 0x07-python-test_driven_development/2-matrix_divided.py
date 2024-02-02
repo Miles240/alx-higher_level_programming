@@ -16,7 +16,8 @@ def matrix_divided(matrix, div):
             raise TypeError(error_msg)
         len_rows.append(len(row))
         for element in row:
-            if type(element) not in [int, float]:
+            if type(eleme
+                    nt) not in [int, float]:
                 raise TypeError(error_msg)
         row_count += 1
     if len(set(len_rows)) > 1:
