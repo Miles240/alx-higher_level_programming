@@ -1,7 +1,6 @@
 #!/usr/bin/python3
+"""Contains a to_json_string function"""
 import json
-
-"""contains a to_json_string function"""
 
 
 def to_json_string(my_obj):
