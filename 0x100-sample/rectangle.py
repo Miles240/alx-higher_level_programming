@@ -27,7 +27,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1.area()
         return rect_2.area()
-     
+
     @property
     def width(self):
         """Getter for private attribute width"""
@@ -58,6 +58,11 @@ class Rectangle:
         else:
             self.__height = value
 
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangle instance with width == height == size"""
+        return cls(size, size)
+
     def area(self):
         """Area of a rectangle"""
         return self.__width * self.__height
@@ -79,4 +84,3 @@ class Rectangle:
     def __repr__(self):
         """String representation of rectangle"""
         return f"Rectangle ({self.__width}, {self.__height})"
-

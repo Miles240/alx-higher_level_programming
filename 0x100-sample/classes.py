@@ -11,48 +11,64 @@ class Employee:
 
     def fullname(self):
         return f"{self.f_name} {self.l_name}"
-    
+
     def apply_raise(self):
-        return self.pay * Employee.raise_amt
-    
-    @classmethod
-    def set_raise_amt(cls, amount):
-        cls.raise_amt = amount
+        self.pay = int(self.pay * self.raise_amt)
 
-    @classmethod
-    def from_string(cls, emp_strs):
-        first, last, pay = emp_strs.split('-')
-        return cls(first, last, int(pay))
-    
-    @staticmethod
-    def is_week_day(day):
-        if day.weekday() == 5 or day.weekday == 6:
-            return False
-        return True
-    
 
-    
-# Creating instance from the Employee Class
-emp_1 = Employee("john", "Doe", 50000)
-emp_2 = Employee('Jane', 'Doe', 35000)
+class Developer(Employee):
+    def __init__(self, first, last, pay, prog_lang):
+        super().__init__(first, last, pay)
+        self.prog_lang = prog_lang
 
-# setting or changing the pay
-emp_1.set_raise_amt(1.05)
 
-#New employee strings 
-emp_str_3 = 'Corey-Schafer-60000'
-emp_str_4 = 'Mike-Adenuga-80000'
+class Manager(Employee):
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
 
-# Using the class method to create new instances
-# emp_3 = Employee.from_string(emp_str_3)
-# print(type(emp_3.pay))
-# print(int(emp_3.apply_raise()))
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
 
-# print(Employee.raise_amt)
-# print(emp_1.raise_amt)
-# print(int(emp_1.apply_raise()))
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
 
-from datetime import date
-my_date = date(2024,2,3)
-day = Employee.is_week_day(my_date)
-print(day)
+    def print_emps(self):
+        for emp in self.employees:
+            print("-->", emp.fullname())
+
+
+class Department(Developer):
+    def __init__(self, first, last, pay, prog_lang, dptm):
+        super().__init__(first, last, pay, prog_lang)
+        self.dptm = dptm
+
+    def full_details(self):
+        return f"{self.f_name} {self.l_name} - {self.dptm}"
+
+
+dev_1 = Employee("Miles", "Bg", 5000)
+dev_2 = Developer("Daniel", "philip", 6000, "Javascript")
+dev_3 = Department('Mohammed', 'Essam', 70000, 'python', 'Junior dev')
+mgr_1 = Manager('Sue', 'Smith', 9000, [dev_1])
+
+print(mgr_1.email)
+mgr_1.add_emp(dev_2)
+mgr_1.add_emp(dev_3)
+mgr_1.print_emps()
+mgr_1.remove_emp(dev_2)
+print('---------------------')
+mgr_1.print_emps()
+
+# print(dev_2.email)
+# print(dev_2.prog_lang)
+# print(dev_3.full_details())
+
+# print(dev_1.pay)
+# dev_1.apply_raise()
+# print(dev_1.pay)
