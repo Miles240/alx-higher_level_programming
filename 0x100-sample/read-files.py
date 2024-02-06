@@ -1,3 +1,3 @@
-with open("text.txt", "r") as f:
-    for line in f:
-        print(line, end="")
+def read_file(filename=""):
+    with open(filename, 'r') as file:
+       print(file.read())
