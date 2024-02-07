@@ -16,6 +16,6 @@ else:
     json_data = load_from_json_file(file_name)
 
 if len(argv) > 1:
-    for arg in argv[1:]:
-        json_data.append(arg)
+    for arg in range(1, len(argv)):
+        json_data.append(argv[arg])
 save_to_json_file(json_data, file_name)
