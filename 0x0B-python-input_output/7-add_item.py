@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Adds all argument to a new json file"""
 import os.path
 from sys import argv
