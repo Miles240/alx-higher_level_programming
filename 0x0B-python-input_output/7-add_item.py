@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-
-"""Adds all argument to a new json file"""
-
-from os import path
+"""
+Script to save and load files
+"""
 from sys import argv
+from os import path
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-file_name = "add_item.json"
 
-if not path.exists(file_name):
-    json_data = []
+file = "add_item.json"
+
+if path.exists(file):
+    my_list = load_from_json_file(file)
 else:
-    json_data = load_from_json_file(file_name)
+    my_list = []
 
 if len(argv) > 1:
-    for arg in range(1, len(argv)):
-        json_data.append(argv[arg])
-save_to_json_file(json_data, file_name)
+    for i in range(1, len(argv)):
+        my_list.append(argv[i])
+
+save_to_json_file(my_list, file)
