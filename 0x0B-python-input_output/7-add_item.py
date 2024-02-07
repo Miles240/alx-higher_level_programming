@@ -2,7 +2,7 @@
 
 """Adds all argument to a new json file"""
 
-import os.path
+from os import path
 from sys import argv
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
@@ -10,7 +10,7 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 file_name = "add_item.json"
 
-if not os.path.isfile(file_name):
+if not path.exists(file_name):
     json_data = []
 else:
     json_data = load_from_json_file(file_name)
