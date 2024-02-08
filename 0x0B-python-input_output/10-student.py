@@ -8,9 +8,9 @@ class Student:
         """
         Initialize a Student object with first_name, last_name, and age.
         Args:
-            first_name (str): students first name
-            last_name (str): students last name
-            age (int): students age
+                first_name (str): students first name
+                last_name (str): students last name
+                age (int): students age
         """
         self.first_name = first_name
         self.last_name = last_name
