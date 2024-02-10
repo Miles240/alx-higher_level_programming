@@ -82,10 +82,37 @@ class Rectangle(Base):
         return self.height * self.width
 
     def display(self):
+        """prints in stdout the Rectangle instance with the character #"""
         for i in range(self.y):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def update(self, *args, **kwargs):
+        """Updates the Rectangle
+
+        Args:
+            *args (int): New attributes
+              - 1st argument represents the id attribute
+              - 2nd argument represents the width attribute
+              - 3rd argument represents the height attribute
+              - 4th argument represents the x attribute
+              - 5th argument represents the y attribute
+
+            **kwargs (int):
+                assigns a key/value argument to attributes
+        """
+        if args and len(args) > 5:
+            raise ValueError(
+                "update() with *args requires 5 arguments (id, width, height, x, y)"
+            )
+        attr_list = ["id", "width", "heigth", "x", "y"]
+        if args:
+            for attr, arg in zip(attr_list, args):
+                setattr(self, attr, arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
