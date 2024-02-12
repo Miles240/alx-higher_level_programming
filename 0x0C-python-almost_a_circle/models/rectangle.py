@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Contains a Rectangle class"""
 from base import Base
 
 
@@ -10,11 +10,11 @@ class Rectangle(Base):
         """Intiatializing the Rectangle
 
         Args:
-            width (int): the width of the Rectangle
-            height (int): the heigth of the Rectangle
-            x (int): the x cordinate of the Rectangle
-            y (int): the y cordinate of the Rectangle
-            id (int): the id of the Rectangle
+                width (int): the width of the Rectangle
+                height (int): the heigth of the Rectangle
+                x (int): the x cordinate of the Rectangle
+                y (int): the y cordinate of the Rectangle
+                id (int): the id of the Rectangle
         """
         self.__width = width
         self.__height = height
@@ -92,15 +92,15 @@ class Rectangle(Base):
         """Updates the Rectangle
 
         Args:
-            *args (int): New attributes
-              - 1st argument represents the id attribute
-              - 2nd argument represents the width attribute
-              - 3rd argument represents the height attribute
-              - 4th argument represents the x attribute
-              - 5th argument represents the y attribute
+                *args (int): New attributes
+                  - 1st argument represents the id attribute
+                  - 2nd argument represents the width attribute
+                  - 3rd argument represents the height attribute
+                  - 4th argument represents the x attribute
+                  - 5th argument represents the y attribute
 
-            **kwargs (int):
-                assigns a key/value argument to attributes
+                **kwargs (int):
+                        assigns a key/value argument to attributes
         """
         if args and len(args) > 5:
             raise ValueError(
