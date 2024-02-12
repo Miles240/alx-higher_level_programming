@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Contains a Square class"""
 from rectangle import Rectangle
 
 
@@ -10,10 +10,10 @@ class Square(Rectangle):
         """Intiatializing the Square
 
         Args:
-            size (int): the width/height of the Square
-            x (int): the x cordinate of the Square
-            y (int): the y cordinate of the Square
-            id (int): the id of the Square
+                size (int): the width/height of the Square
+                x (int): the x cordinate of the Square
+                y (int): the y cordinate of the Square
+                id (int): the id of the Square
         """
         super().__init__(size, size, x, y, id)
 
@@ -32,14 +32,14 @@ class Square(Rectangle):
         """Updates the Square
 
         Args:
-            *args (int): New attributes
-              - 1st argument represents the id attribute
-              - 2nd argument represents the width/height attribute
-              - 3rd argument represents the x attribute
-              - 4th argument represents the y attribute
+                *args (int): New attributes
+                  - 1st argument represents the id attribute
+                  - 2nd argument represents the width/height attribute
+                  - 3rd argument represents the x attribute
+                  - 4th argument represents the y attribute
 
-            **kwargs (int):
-                assigns a key/value argument to attributes
+                **kwargs (int):
+                        assigns a key/value argument to attributes
         """
         attr_list = ["id", "size", "x", "y"]
         if args:
