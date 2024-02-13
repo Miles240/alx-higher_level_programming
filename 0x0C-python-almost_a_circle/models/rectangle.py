@@ -16,10 +16,10 @@ class Rectangle(Base):
 			y (int): the y cordinate of the Rectangle
 			id (int): the id of the Rectangle
 		"""
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
