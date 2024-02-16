@@ -15,6 +15,12 @@ class Rectangle(Base):
 			x (int): the x cordinate of the Rectangle
 			y (int): the y cordinate of the Rectangle
 			id (int): the id of the Rectangle
+
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
 		"""
         self.width = width
         self.height = height
@@ -100,7 +106,7 @@ class Rectangle(Base):
 				- 4th argument represents the x attribute
 				- 5th argument represents the y attribute
 
-			**kwargs (int):
+			**kwargs (dict):
 				assigns a key/value argument to attributes
         """
         if args and len(args) > 5:
