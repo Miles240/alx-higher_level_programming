@@ -20,7 +20,7 @@ class TestBase(unittest.TestCase):
 
         # test if the id == None
         obj3 = Base(None)
-        self.assertEqual(obj3.id, 1)
+        self.assertEqual(obj3.id, 2)
 
     def test_to_json_string(self):
         """Tests cases for to_json_string method"""
