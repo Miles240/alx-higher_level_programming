@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Contains a Square class"""
-from mrectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
