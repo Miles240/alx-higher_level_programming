@@ -11,24 +11,24 @@ class TestBase(unittest.TestCase):
     def test_init(self):
         """Tests cases for the __init__ method"""
         # test if the id is not provided
-        obj1 = Base()
-        self.assertEqual(obj1.id, 1)
+        base_1 = Base()
+        base_2 = Base()
+        self.assertEqual(base_1.id, base_2.id - 1)
 
-        # test when the id is modified
         obj2 = Base(10)
         self.assertEqual(obj2.id, 10)
 
         # test if the id == None
         obj3 = Base(None)
-        self.assertEqual(obj3.id, 1)
+        self.assertEqual(obj3.id, 3)
 
     def test_to_json_string(self):
         """Tests cases for to_json_string method"""
 
         # test the conversion of list of dictionaries to JSON string
-        list_dict = [{"name": "miles"}, {"name": "bertina"}, {"name": "essam"}]
+        list_dict = [{"name":"miles"},{"name":"bertina"},{"name":"essam"}]
         json_string = Base.to_json_string(list_dict)
-        expected_string = "[{'name':'miles'},{'name':'bertina'},{'name':'essam'}]"
+        expected_string = '[{"name": "miles"}, {"name": "bertina"}, {"name": "essam"}]'
         self.assertEqual(json_string, expected_string)
 
         # test the conversion of an empty list to JSON string
