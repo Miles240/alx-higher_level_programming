@@ -2,7 +2,7 @@
 """Test file for Base class"""
 
 import unittest
-from models.base import Base
+from models.base import base
 
 
 class TestBase(unittest.TestCase):

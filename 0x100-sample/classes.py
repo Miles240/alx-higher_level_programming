@@ -1,55 +1,55 @@
 class Employee:
-    num_of_emp = 0
-    raise_amt = 1.04
+	num_of_emp = 0
+	raise_amt = 1.04
 
-    def __init__(self, first, last, pay):
-        self.f_name = first
-        self.l_name = last
-        self.email = f"{first}{last}.@email.com"
-        self.pay = pay
-        Employee.num_of_emp += 1
+	def __init__(self, first, last, pay):
+		self.f_name = first
+		self.l_name = last
+		self.email = f"{first}{last}.@email.com"
+		self.pay = pay
+		Employee.num_of_emp += 1
 
-    def fullname(self):
-        return f"{self.f_name} {self.l_name}"
+	def fullname(self):
+		return f"{self.f_name} {self.l_name}"
 
-    def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amt)
+	def apply_raise(self):
+		self.pay = int(self.pay * self.raise_amt)
 
 
 class Developer(Employee):
-    def __init__(self, first, last, pay, prog_lang):
-        super().__init__(first, last, pay)
-        self.prog_lang = prog_lang
+	def __init__(self, first, last, pay, prog_lang):
+		super().__init__(first, last, pay)
+		self.prog_lang = prog_lang
 
 
 class Manager(Employee):
-    def __init__(self, first, last, pay, employees=None):
-        super().__init__(first, last, pay)
-        if employees is None:
-            self.employees = []
-        else:
-            self.employees = employees
+	def __init__(self, first, last, pay, employees=None):
+		super().__init__(first, last, pay)
+		if employees is None:
+			self.employees = []
+		else:
+			self.employees = employees
 
-    def add_emp(self, emp):
-        if emp not in self.employees:
-            self.employees.append(emp)
+	def add_emp(self, emp):
+		if emp not in self.employees:
+			self.employees.append(emp)
 
-    def remove_emp(self, emp):
-        if emp in self.employees:
-            self.employees.remove(emp)
+	def remove_emp(self, emp):
+		if emp in self.employees:
+			self.employees.remove(emp)
 
-    def print_emps(self):
-        for emp in self.employees:
-            print("-->", emp.fullname())
+	def print_emps(self):
+		for emp in self.employees:
+			print("-->", emp.fullname())
 
 
 class Department(Developer):
-    def __init__(self, first, last, pay, prog_lang, dptm):
-        super().__init__(first, last, pay, prog_lang)
-        self.dptm = dptm
+	def __init__(self, first, last, pay, prog_lang, dptm):
+		super().__init__(first, last, pay, prog_lang)
+		self.dptm = dptm
 
-    def full_details(self):
-        return f"{self.f_name} {self.l_name} - {self.dptm}"
+	def full_details(self):
+		return f"{self.f_name} {self.l_name} - {self.dptm}"
 
 
 dev_1 = Employee("Miles", "Bg", 5000)

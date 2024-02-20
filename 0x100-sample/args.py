@@ -19,7 +19,7 @@
 
 def kwargs(**user):
     print(user)
-    for name in user.:
+    for name in user.items():
         print(name)
 
 kwargs(user1= 'miles', user2= 'pius')
