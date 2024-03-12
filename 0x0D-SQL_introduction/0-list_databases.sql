@@ -1,3 +1,2 @@
---Script that lists all the available databases
-
-SHOW DATABASES
+/*Script that lists all the available databases*/
+SHOW DATABASES;
