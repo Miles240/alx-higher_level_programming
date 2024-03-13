@@ -1,0 +1,1 @@
+SELECT SUM(score) FROM second_table;
