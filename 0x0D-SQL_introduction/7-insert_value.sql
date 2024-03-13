@@ -1,5 +1,5 @@
 -- Inserts a new row to the table
-INSERT
+INSERT INTO
     first_table (id, name)
 VALUES
     (89, 'Best Shcool');
