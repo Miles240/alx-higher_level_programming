@@ -8,4 +8,4 @@ FROM
 WHERE
     tv_shows.id = 8
 ORDER BY
-    tv_genres.name desc;
+    tv_genres.name ASC;
