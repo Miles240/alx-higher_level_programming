@@ -5,6 +5,8 @@ SELECT
 FROM
     tv_genres
     LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id
+WHERE
+    tv_genres.id IS NOT NULL
 GROUP BY
     tv_genres.name
 ORDER BY
