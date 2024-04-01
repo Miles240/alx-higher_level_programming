@@ -1,5 +1,3 @@
-use hbtn_0d_tvshows;
-
 -- lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
 select
     tv_genres.name as 'name'
