@@ -48,7 +48,3 @@ import logging
 # num1 = [1, 2, 3, 4, 5, 6]
 # num2 = [7, 8, 9, 10, 11]
 # safe_print(num1, num2)
-
-num = [1,2,3,4,5]
-print(type(num))
-print(num)
