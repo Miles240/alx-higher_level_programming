@@ -8,4 +8,4 @@ FROM
 GROUP BY
     tv_genres.name
 ORDER BY
-    'number_of_shows' DESC;
+    `number_of_shows` DESC;
