@@ -2,6 +2,6 @@
 
 let myArr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
-for (let arr of myArr) {
-	console.log(arr);
+for (let i = 0; i < myArr.length; i++) {
+	console.log(myArr[1]);
 }
