@@ -7,7 +7,7 @@ if (argsCount === 0) {
 } else if (argsCount === 1) {
 	console.log(process.argv[2]);
 } else {
-	for (let i = 2; i < process.argv.length; i++) {
+	for (let i = 2; i <= process.argv.length; i++) {
 		console.log(process.argv[i]);
 	}
 }
