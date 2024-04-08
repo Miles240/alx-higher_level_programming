@@ -3,5 +3,5 @@
 let myArr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
 for (let i = 0; i < myArr.length; i++) {
-	console.log(myArr[1]);
+	console.log(myArr[i]);
 }
