@@ -14,16 +14,13 @@ def list_states(username, password, name, state_name):
         name(str): db name
         state_name(str): Required state
     """
-    try:
-        conn = MySQLdb.connect(
-            host="localhost",
-            port="3306",
-            user=username,
-            password=password,
-            db=name
-        )
-    except MySQLdb.Error as e:
-        print(f"Error connecting to database {e}")
+    conn = MySQLdb.connect(
+        host="localhost",
+        port="3306",
+        user=username,
+        password=password,
+        db=name
+    )
 
     cursor = conn.cursor()
     query = """
@@ -43,14 +40,7 @@ def list_states(username, password, name, state_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print(
-            """Usage: Python Script.py
-            <username>
-            <password>
-            <name>
-            <state_name>"""
-        )
+
     username = sys.argv[1]
     password = sys.argv[2]
     name = sys.argv[3]
