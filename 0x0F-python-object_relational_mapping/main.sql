@@ -17,3 +17,5 @@ VALUES
 	("Texas"),
 	("New York"),
 	("Nevada");
+
+SELECT * FROM states;
