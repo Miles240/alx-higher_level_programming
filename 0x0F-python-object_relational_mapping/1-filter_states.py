@@ -33,9 +33,6 @@ def list_states(username, password, name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <name>")
-        sys.exit(1)
 
     username = sys.argv[1]
     password = sys.argv[2]
