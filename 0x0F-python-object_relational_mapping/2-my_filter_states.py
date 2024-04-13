@@ -22,24 +22,25 @@ def list_states(username, password, name, state_name):
             password=password,
             db=name
         )
+
+        cursor = conn.cursor()
+        query = """
+        SELECT * FROM states
+        WHERE name = '{}'
+        ORDER BY states.id ASC""".format(state_name)
+
+        cursor.execute(query)
+        states = cursor.fetchall()
+
+        for state in states:
+            print(state)
+
+        cursor.close()
+        conn.close()
+
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL database: {e}")
         sys.exit(1)
-
-    cursor = conn.cursor()
-    query = """
-    SELECT * FROM states
-    WHERE name = '{}'
-    ORDER BY states.id ASC""".format(state_name)
-
-    cursor.execute(query)
-    states = cursor.fetchall()
-
-    for state in states:
-        print(state)
-
-    cursor.close()
-    conn.close()
 
 
 if __name__ == "__main__":
