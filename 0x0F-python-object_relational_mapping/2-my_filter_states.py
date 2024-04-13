@@ -1,9 +1,19 @@
 #!/usr/bin/python3
+
+"""Contains the list_state Module"""
+
 import MySQLdb
 import sys
 
 
 def list_states(username, password, name, state_name):
+    """list the states in the table
+    Args:
+        username(str): user
+        password(str): db password
+        name(str): db name
+        state_name(str): Required state
+    """
     try:
         conn = MySQLdb.connect(
             host="localhost",
@@ -34,7 +44,13 @@ def list_states(username, password, name, state_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <name> <state_name>")
+        print(
+            """Usage: python script.py
+            <username>
+            <password>
+            <name>
+            <state_name>"""
+             )
         sys.exit(1)
 
     username = sys.argv[1]
