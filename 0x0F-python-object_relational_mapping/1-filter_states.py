@@ -7,17 +7,14 @@ import sys
 
 def list_states(username, password, name):
     """Function that lists all the states from the database"""
-    try:
-        conn = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            password=password,
-            db=name
-        )
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL database: {e}")
-        sys.exit(1)
+
+    conn = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        password=password,
+        db=name
+    )
 
     cursor = conn.cursor()
     query = """
