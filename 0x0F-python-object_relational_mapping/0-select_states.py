@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+"""Contains the list_states Module"""
 import MySQLdb
 import sys
 
