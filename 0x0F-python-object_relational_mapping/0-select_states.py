@@ -5,17 +5,14 @@ import sys
 
 def list_states(username, password, name):
     """Function that lists all the states from the database"""
-    try:
-        conn = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            password=password,
-            db=name
-        )
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL database: {e}")
-        sys.exit(1)
+
+    conn = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        password=password,
+        db=name
+    )
 
     cursor = conn.cursor()
     query = "SELECT * FROM states ORDER BY states.id ASC"
@@ -31,9 +28,6 @@ def list_states(username, password, name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <name>")
-        sys.exit(1)
 
     username = sys.argv[1]
     password = sys.argv[2]
