@@ -1,62 +1,33 @@
 #!/usr/bin/python3
 
-"""Contains the list_state Module"""
+"""List all states in the database"""
 
 import MySQLdb
 import sys
 
+if __name__ == "__main__":
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        password=sys.argv[2],
+        db=sys.argv[3],
+    )
 
-def list_states(username, password, name, state_name):
-    """list the states in the table
-    Args:
-        username(str): user
-        password(str): db password
-        name(str): db name
-        state_name(str): Required state
-    """
-    try:
-        conn = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            password=password,
-            db=name
-        )
+    cursor = db.cursor()
 
-        cursor = conn.cursor()
-        query = """
+    query = """
         SELECT * FROM states
         WHERE name = '{}'
-        ORDER BY states.id ASC""".format(state_name)
+        ORDER BY states.id ASC""".format(
+        sys.argv[4]
+    )
 
-        cursor.execute(query)
-        states = cursor.fetchall()
+    cursor.execute(query)
+    states = cursor.fetchall()
 
-        for state in states:
-            print(state)
+    for state in states:
+        print(state)
 
-        cursor.close()
-        conn.close()
-
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL database: {e}")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print(
-            """Usage: python script.py
-            <username>
-            <password>
-            <name>
-            <state_name>"""
-             )
-        sys.exit(1)
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    list_states(username, password, name, state_name)
+    cursor.close()
+    db.close()
