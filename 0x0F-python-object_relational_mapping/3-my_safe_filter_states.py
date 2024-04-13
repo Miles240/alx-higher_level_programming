@@ -7,13 +7,7 @@ import sys
 
 
 def list_states(username, password, name, state_name):
-    """list the states in the table
-    Args:
-        username(str): user
-        password(str): db password
-        name(str): db name
-        state_name(str): Required state
-    """
+    """list the states in the table"""
     conn = MySQLdb.connect(
         host="localhost",
         port="3306",
