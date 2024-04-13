@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Contains the list_states Module"""
+
 import MySQLdb
 import sys
+
 
 def list_states(username, password, name):
     """Function that lists all the states from the database"""
@@ -17,7 +20,10 @@ def list_states(username, password, name):
         sys.exit(1)
 
     cursor = conn.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
+    query = """
+        SELECT * FROM states
+        WHERE name LIKE 'N%'
+        ORDER BY states.id ASC"""
 
     cursor.execute(query)
     states = cursor.fetchall()
