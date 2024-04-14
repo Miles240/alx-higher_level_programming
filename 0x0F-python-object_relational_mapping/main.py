@@ -34,4 +34,4 @@ session.close()
 result = session.query(State).all()
 
 for person in result:
-	print(f'{person.name}, {person.age}')
+	print(person.name, person.age, sep=': ')
