@@ -9,11 +9,12 @@ import sys
 
 
 if __name__ == "__main__":
-    db_URL = "mysql+mysqldb://{}:{}@localhost:3306/{}".fomat(
-        sys.argv[1], sys.argv[2], sys.argv[3]
-    )
 
-    engine = create_engine(db_URL)
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+            sys.argv[1], sys.argv[2], sys.argv[3]
+        )
+    )
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
