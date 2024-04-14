@@ -9,7 +9,7 @@ import sys
 
 
 if __name__ == "__main__":
-    db_URL = "mysql+mysqldb://{}:{}}@localhost:3306/{}".fomat(
+    db_URL = "mysql+mysqldb://{}:{}@localhost:3306/{}".fomat(
         sys.argv[1], sys.argv[2], sys.argv[3]
     )
 
