@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).order_by(State.id.asc()).first()
+    result = session.query(State).order_by(State.id).first()
     print(result.id, result.name, sep=": ")
 
     session.close()
