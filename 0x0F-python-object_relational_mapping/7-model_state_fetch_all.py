@@ -15,7 +15,7 @@ if __name__ == "__main__":
     db_password = sys.argv[2]
     db_name = sys.argv[3]
     db_URL = (
-        f"mysql+mysqlconnector://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+        f"mysql+mysqldb://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     )
 
     engine = create_engine(db_URL, pool_pre_ping=True)
