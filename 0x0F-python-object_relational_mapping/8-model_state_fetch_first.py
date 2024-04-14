@@ -13,7 +13,7 @@ if __name__ == "__main__":
         sys.argv[1], sys.argv[2], sys.argv[3]
     )
 
-    engine = create_engine(db_URL, pool_pre_ping=True)
+    engine = create_engine(db_URL)
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -21,6 +21,7 @@ if __name__ == "__main__":
     result = session.query(State).first()
     if result is None:
         print("Nothing")
-    print(result.id, result.name, sep=": ")
+    else:
+        print(result.id, result.name, sep=": ")
 
     session.close()
