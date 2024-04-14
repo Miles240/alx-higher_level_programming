@@ -2,10 +2,10 @@
 
 """lists all State objects from the database hbtn_0e_6_usa"""
 
+import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import sys
 
 
 if __name__ == "__main__":
@@ -25,3 +25,5 @@ if __name__ == "__main__":
 
     for state in states:
         print(state.id, state.name, sep=": ")
+
+    session.close()
