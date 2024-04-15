@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-"""prints the State object with the name passed as 
-    argument from the database hbtn_0e_6_usa
+"""prints the State object with the name passed as
+argument from the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
@@ -20,9 +20,12 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    result = session.query(State).filter(State.name.like(sys.argv[4])).all()
+    result = session.query(State).filter(State.name == sys.argv[4]).all()
 
     for state in result:
-        print(state.id)
+        if state == None:
+            print("Not found")
+        else:
+            print(state.id)
 
     session.close()
