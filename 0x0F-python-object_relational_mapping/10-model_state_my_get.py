@@ -23,7 +23,7 @@ if __name__ == "__main__":
     result = session.query(State).filter(State.name == sys.argv[4]).all()
 
     for state in result:
-        if state == None:
+        if state is None:
             print("Not found")
         else:
             print(state.id)
