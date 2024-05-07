@@ -27,11 +27,12 @@ session = Session()
 # person = State(name="Miles", age=20)
 
 # session.add(person)
-# session.commit()
-session.close()
 
 
 result = session.query(State).all()
 
 for person in result:
-	print(person.name, person.age, sep=': ')
+	print(person.id)
+
+session.commit()
+session.close()
