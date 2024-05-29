@@ -13,7 +13,7 @@ class State(Base):
     """Class representation of States"""
 
     __tablename__ = "people"
-    id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    id = Column(Integer,autoincrement=True, primary_key=True, unique=True, nullable=False)
     name = Column(String(128), nullable=False)
     age = Column(Integer, nullable=False)
 
@@ -29,10 +29,13 @@ session = Session()
 # session.add(person)
 
 
-result = session.query(State).all()
+result = session.get(State, 16)
+result.name = "pius"
+print(result.name)
 
-for person in result:
-	print(person.id)
+# for person in result:
+#     # session.delete(person)
+# 	print(person.id, person.name, person.age)
 
 session.commit()
 session.close()
